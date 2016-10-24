@@ -1,0 +1,51 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="Commands" targetNamespace="http://tempuri.org/Commands.xsd" xmlns:mstns="http://tempuri.org/Commands.xsd" xmlns="http://tempuri.org/Commands.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections />
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="Commands" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="Commands" msprop:Generator_UserDSName="Commands">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="CommandList" msprop:Generator_TableClassName="CommandListDataTable" msprop:Generator_TableVarName="tableCommandList" msprop:Generator_TablePropName="CommandList" msprop:Generator_RowDeletingName="CommandListRowDeleting" msprop:Generator_RowChangingName="CommandListRowChanging" msprop:Generator_RowEvHandlerName="CommandListRowChangeEventHandler" msprop:Generator_RowDeletedName="CommandListRowDeleted" msprop:Generator_UserTableName="CommandList" msprop:Generator_RowChangedName="CommandListRowChanged" msprop:Generator_RowEvArgName="CommandListRowChangeEvent" msprop:Generator_RowClassName="CommandListRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="CommandID" msdata:AutoIncrement="true" msprop:Generator_ColumnVarNameInTable="columnCommandID" msprop:Generator_ColumnPropNameInRow="CommandID" msprop:Generator_ColumnPropNameInTable="CommandIDColumn" msprop:Generator_UserColumnName="CommandID" type="xs:long" />
+              <xs:element name="CommandType" msprop:Generator_ColumnVarNameInTable="columnCommandType" msprop:Generator_ColumnPropNameInRow="CommandType" msprop:Generator_ColumnPropNameInTable="CommandTypeColumn" msprop:Generator_UserColumnName="CommandType" type="xs:string" minOccurs="0" />
+              <xs:element name="Phrase" msprop:Generator_ColumnVarNameInTable="columnPhrase" msprop:Generator_ColumnPropNameInRow="Phrase" msprop:Generator_ColumnPropNameInTable="PhraseColumn" msprop:Generator_UserColumnName="Phrase" type="xs:string" minOccurs="0" />
+              <xs:element name="Reply" msprop:Generator_ColumnVarNameInTable="columnReply" msprop:Generator_ColumnPropNameInRow="Reply" msprop:Generator_ColumnPropNameInTable="ReplyColumn" msprop:Generator_UserColumnName="Reply" type="xs:string" minOccurs="0" />
+              <xs:element name="Path" msprop:Generator_ColumnVarNameInTable="columnPath" msprop:Generator_ColumnPropNameInRow="Path" msprop:Generator_ColumnPropNameInTable="PathColumn" msprop:Generator_UserColumnName="Path" type="xs:string" minOccurs="0" />
+              <xs:element name="ByName" msprop:Generator_ColumnVarNameInTable="columnByName" msprop:Generator_ColumnPropNameInRow="ByName" msprop:Generator_ColumnPropNameInTable="ByNameColumn" msprop:Generator_UserColumnName="ByName" type="xs:boolean" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="ArgumentList" msprop:Generator_TableClassName="ArgumentListDataTable" msprop:Generator_TableVarName="tableArgumentList" msprop:Generator_TablePropName="ArgumentList" msprop:Generator_RowDeletingName="ArgumentListRowDeleting" msprop:Generator_RowChangingName="ArgumentListRowChanging" msprop:Generator_RowEvHandlerName="ArgumentListRowChangeEventHandler" msprop:Generator_RowDeletedName="ArgumentListRowDeleted" msprop:Generator_UserTableName="ArgumentList" msprop:Generator_RowChangedName="ArgumentListRowChanged" msprop:Generator_RowEvArgName="ArgumentListRowChangeEvent" msprop:Generator_RowClassName="ArgumentListRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="ArgumentID" msdata:AutoIncrement="true" msprop:Generator_ColumnVarNameInTable="columnArgumentID" msprop:Generator_ColumnPropNameInRow="ArgumentID" msprop:Generator_ColumnPropNameInTable="ArgumentIDColumn" msprop:Generator_UserColumnName="ArgumentID" type="xs:long" />
+              <xs:element name="CommandID" msprop:Generator_ColumnVarNameInTable="columnCommandID" msprop:Generator_ColumnPropNameInRow="CommandID" msprop:Generator_ColumnPropNameInTable="CommandIDColumn" msprop:Generator_UserColumnName="CommandID" type="xs:long" minOccurs="0" />
+              <xs:element name="Arg" msprop:Generator_ColumnVarNameInTable="columnArg" msprop:Generator_ColumnPropNameInRow="Arg" msprop:Generator_ColumnPropNameInTable="ArgColumn" msprop:Generator_UserColumnName="Arg" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+    <xs:unique name="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:CommandList" />
+      <xs:field xpath="mstns:CommandID" />
+    </xs:unique>
+    <xs:unique name="ArgumentList_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:ArgumentList" />
+      <xs:field xpath="mstns:ArgumentID" />
+    </xs:unique>
+    <xs:keyref name="FK_CommandList_ArgumentList" refer="Constraint1" msdata:ConstraintOnly="true">
+      <xs:selector xpath=".//mstns:ArgumentList" />
+      <xs:field xpath="mstns:CommandID" />
+    </xs:keyref>
+  </xs:element>
+</xs:schema>
